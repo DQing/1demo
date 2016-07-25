@@ -16,7 +16,6 @@ function printReceipt(tags) {
 
   console.log(receiptText);
 }
-
 function buildCartItems(tags, allItems) {
 
   const cartItems = [];
