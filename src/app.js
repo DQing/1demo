@@ -3,6 +3,7 @@ const allItems = fixture.loadAllItems;
 const allPromotions = fixture.loadPromotions;
 const CartItem = require('./cart-items');
 const ReceiptItems = require('./receipt-item');
+const Receipt = require('./receipt');
 
 function printReceipt(tags) {
 
@@ -10,24 +11,11 @@ function printReceipt(tags) {
 
   const receiptItems = ReceiptItems.buildReceiptItems(cartItems, allPromotions());
 
-  const receipt = buildReceipt(receiptItems);
+  const receipt = Receipt.buildReceipt(receiptItems);
 
   const receiptText = buildReceiptText(receipt);
 
   console.log(receiptText);
-}
-
-function buildReceipt(receiptItems) {
-
-  let total = 0;
-  let savedTotal = 0;
-
-  for (const receiptItem of receiptItems) {
-    total += receiptItem.subtotal;
-    savedTotal += receiptItem.saved;
-  }
-
-  return {receiptItems, total, savedTotal}
 }
 
 function buildReceiptText(receipt) {
