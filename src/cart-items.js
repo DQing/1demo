@@ -1,8 +1,8 @@
-class cartItem {
+class CartItem {
 
   constructor(item, count) {
-    this.count = count;
     this.item = item;
+    this.count = count;
 
   }
 
@@ -21,11 +21,11 @@ class cartItem {
         cartItem.count += count;
       } else {
         const item = allItems.find(item => item.barcode === barcode);
-        cartItems.push(new cartItem(count, item));
+        cartItems.push(new CartItem(item, count));
       }
     }
 
     return cartItems;
   }
 }
-module.exports = cartItem;
+module.exports = CartItem;
