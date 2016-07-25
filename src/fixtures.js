@@ -1,4 +1,4 @@
-const allItems = require('./item');
+const allItems = require('./Item');
 const promotion = require('./promotion');
 function loadAllItems() {
   return [
